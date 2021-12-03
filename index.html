@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Assistant</title>
+    <link rel="favicon" href="assets/images/jwLogo.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="static/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/calendar.css">
+</head>
+<body>   
+    <!-- welcome lightbox -->
+    <div class="" id="welcome-box">
+        <!-- welcome message -->
+        <h1>hello! what's your name?</h1>
+        <input type="text" name="msg" id="user-name">
+        <button id="enter-btn">enter</button>
+    </div>
+    <!-- end lightbox -->
+
+    <!-- Program Interface -->
+    <div class="hide" id="interface">
+        <!-- header -->
+        <h1 id="title">the assistant</h1>
+        <!-- <h2 id="assistant-name">erin ashley</h2> -->
+        <!-- end header -->
+
+        <!-- menu pane -->
+        <div id="mySidenav" class="sidenav hide">
+            <img src="assets/images/menu-icon.png" alt="menu icon to close the menu pane" id="close-menu" class="hide" onclick="closeMenu()">
+            <h2 id="status-title">change status</h2>
+            <div class="status-icons">
+                <!-- <img id="checkmark" class="status-indicator" src="" alt="checkmark to identify the assistant's status"> -->
+                <img id="online-status" class="status" src="assets/images/online.png" alt="assistant's online status icon" >
+                <img id="offline-status" class="status" src="assets/images/offline.png" alt="assistant's offline status icon">
+            </div>
+            <button id="show-calendar">Calendar</button>
+        </div>
+        <img src="assets/images/menu-icon-blk.png" alt="menu icon to open the menu pane" id="open-menu" class="show" onclick="openMenu()">
+        <!-- end menu -->
+
+        <!-- avatar -->
+        <div id="avatar" class="">
+            <img src="assets/images/hello.png" alt="the assistant is waving" id="avatar-wave">
+        </div>
+        <!-- end evatar -->
+
+    <!-- CHAT BAR BLOCK -->
+        <div class="chat-bar-collapsible">
+            <button id="chat-button" type="button" class="collapsible">Ask me for help!
+                <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+            </button>
+
+            <div class="content">
+                <div class="full-chat-block">
+                    <!-- Message Container -->
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <!-- Messages -->
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            </div>
+
+                            <!-- User input box -->
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg"
+                                        placeholder="Type a message">
+                                    <p></p>
+                                </div>
+
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                        onclick="heartButton()"></i>
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                        onclick="sendButton()"></i>
+                                </div>
+                            </div>
+
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    <!-- end chat box -->
+    </div>
+    
+    <!-- calendar -->
+        <div id="calendar" class="hide"></div>
+    <!-- end calendar -->
+    
+
+</body>
+<script src="app.js"></script>
+<script src="static/scripts/chat.js"></script>
+<script src="static/scripts/responses.js"></script>
+<script src="static/scripts/calendar.js"></script>
+<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</html>
